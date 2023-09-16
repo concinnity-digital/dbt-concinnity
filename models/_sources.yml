@@ -1,21 +1,39 @@
-
 version: 2
 
-models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
-
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+sources:
+  - name: src_fast_fleet_sales
+    schema: src_fast_fleet_sales  
+    tables:
+      - name: '2021_01'
+      - name: '2021_02'
+      - name: '2021_03'
+      - name: '2021_04'
+      - name: '2021_05'
+      - name: '2021_06'
+      - name: '2021_07'
+      - name: '2021_08'
+      - name: '2021_09'
+      - name: '2021_10'
+      - name: '2021_11'
+      - name: '2021_12'
+      - name: '2022_01'
+      - name: '2022_02'
+      - name: '2022_03'
+      - name: '2022_04'
+      - name: '2022_05'
+      - name: '2022_06'
+      - name: '2022_07'
+      - name: '2022_08'
+      - name: '2022_09'
+      - name: '2022_10'
+      - name: '2022_11'
+      - name: '2022_12'
+      - name: '2023_01'
+      - name: '2023_02'
+      - name: '2023_03'
+      - name: '2023_04'
+      - name: '2023_05'
+      - name: '2023_06'
+      - name: '2023_07'
+      - name: '2023_08'
+      - name: '2023_09'
