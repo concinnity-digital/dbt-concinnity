@@ -3,7 +3,7 @@ with source as (
 ),
 renamed as (
     select
-        cast(kan as date) as date,
+        cast(kan as date) as Date,
         Customer,
         Amount,
         Labor_Cost,
@@ -13,11 +13,11 @@ renamed as (
         Service_Type,
         Classification,
         Job__ as Job,
-        cast(Truck__ as string) as Truck,
+        trim(cast(Truck__ as string)) as Truck,
         Invoice__ as Invoice,
         Payment_Method,
         Shift,
-        Lead_Source,
+        initcap(trim(Lead_Source)) as Lead_Source,
         Notes,
     from source
     where kan is not null

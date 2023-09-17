@@ -34,6 +34,8 @@ models:
       +materialized: view
       fast_fleet_sales:
         +schema: stg_fast_fleet_sales
+      fast_fleet_mapping:
+        +schema: stg_fast_fleet_mapping
 
     marts:
       +materialized: table
