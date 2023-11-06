@@ -36,8 +36,18 @@ models:
         +schema: stg_fast_fleet_sales
       fast_fleet_mapping:
         +schema: stg_fast_fleet_mapping
+      first_lien_heloc:
+        +schema: stg_first_lien_heloc
+      src_ghl_flh:
+        +schema: stg_src_ghl_flh
+      src_gohighlevel:
+        +schema: stg_src_gohighlevel
+      src_mapping:
+        +schema: stg_src_mapping
 
     marts:
       +materialized: table
       fast_fleet:
         +schema: marts_fast_fleet
+      first_lien_heloc:
+        +schema: marts_first_lien_heloc

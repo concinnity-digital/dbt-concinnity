@@ -43,3 +43,23 @@ sources:
     schema: src_fast_fleet_mapping
     tables:
       - name: 'region_mapping'
+
+  - name: src_ghl_flh
+    schema: gohighlevel_firstsavingsbank
+    tables:
+      - name: contacts_raw
+      - name: contacts_raw_v2
+      - name: raw_pipelines
+      - name: raw_opportunities
+  
+  - name: src_mapping
+    schema: src_mapping
+    tables:
+      - name: flh_ambassador_list
+  
+  - name: src_gohighlevel
+    schema: src_gohighlevel
+    tables:
+      - name: contacts
+      - name: opportunities
+      - name: pipelines
