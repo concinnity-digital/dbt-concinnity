@@ -1,6 +1,7 @@
 {{
     config(
-        materialized = 'view'
+        unique_key = "surrogate_key",
+        partition_by ={ "field": "date", "data_type": "date" }
     )
 }}
 
