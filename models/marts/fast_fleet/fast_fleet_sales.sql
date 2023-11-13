@@ -188,6 +188,24 @@ unioned as (
         Notes,
         Shift
     from {{ ref('stg_fast_fleet_sales__2023_10') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        Shift
+    from {{ ref('stg_fast_fleet_sales__2023_11') }}
 ),
 add_row_num as (
     select 

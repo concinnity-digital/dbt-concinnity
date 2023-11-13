@@ -33,7 +33,6 @@ renamed as (
         lastactivity,
         customfield,
         timezone,
-        website,
         __index_level_0__
 
     from source
