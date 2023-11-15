@@ -1,4 +1,24 @@
-with raw as (
+with 
+contacts as (
+
+    select 
+        id,
+        dateAdded
+    from {{ ref('stg_src_ghl_flh__contacts_raw_v2') }}
+    group by 1,2
+
+),
+opportunities as (
+
+    select * from {{ ref('stg_src_ghl_flh__raw_opportunities') }}
+    
+),
+pipelines as (
+
+    select * from {{ ref('stg_src_gohighlevel__pipelines') }}
+    
+),
+raw as (
 
     SELECT 
         distinct 
@@ -46,32 +66,39 @@ Referral_name AS (
     FROM {{ ref('stg_src_ghl_flh__contacts_raw_v2') }}
     WHERE customfield_id IN ("zni40BEz2cLAV5jOikN1")
 
+),
+final as (
+
+    select 
+        -- raw.contacts_id as Contact_Id,
+        -- opp.opportunities_contact_id as Contact_Id,
+        contacts.id as contact_id,
+        raw.First_Name as First_Name,
+        raw.Last_Name as Last_Name,
+        -- raw.contacts_fullName as Name,
+        opportunities.opportunities_contact_name as name,
+        -- raw.Contacts_Email,
+        opportunities.opportunities_contact_email as Contacts_Email,
+        raw.Source,
+        raw.AssignedTo,
+        opportunities.opportunities_assignedto as opp_assigned_to,
+        -- opp.opportunities_createdAt as Date_Created,
+        contacts.dateAdded as date_created,
+        
+        opportunities.opportunities_status as Status,
+        amb_source.Ambassador_Source,
+        how_did_you_hear.How_did_you_hear_about_us,
+        referral_name.Referral_Name,
+        string_agg(pipelines.stage_name) as stage_name,
+        string_agg(opportunities.opportunities_pipelineStageId) as StageId
+    from contacts
+    left join opportunities on opportunities.opportunities_contact_id = contacts.id
+    left join raw  on raw.contacts_id = opportunities.opportunities_contact_id
+    left join Amb_Source on amb_source.contacts_id = raw.contacts_id
+    left join how_did_you_hear on how_did_you_hear.contacts_id2 = raw.contacts_id
+    left join referral_name on raw.contacts_id = referral_name.contacts_id3
+    left join  pipelines on pipelines.stage_id = opportunities.opportunities_pipelineStageId
+    group by 1,2,3,4,5,6,7,8,9,10,11,12,13
 )
 
-select 
-    -- raw.contacts_id as Contact_Id,
-    opp.contact_id as Contact_Id,
-    raw.First_Name as First_Name,
-    raw.Last_Name as Last_Name,
-    -- raw.contacts_fullName as Name,
-    opp.contact_name as name,
-    -- raw.Contacts_Email,
-    opp.contact_email as Contacts_Email,
-    raw.Source,
-    raw.AssignedTo,
-    opp.assignedto as opp_assigned_to,
-    opp.createdAt as Date_Created,
-    opp.pipelineStageId as StageId,
-    opp.status as Status,
-    amb_source.Ambassador_Source,
-    how_did_you_hear.How_did_you_hear_about_us,
-    referral_name.Referral_Name,
-    stage.stage_name
-from {{ ref('stg_src_gohighlevel__opportunities') }} opp 
-left join raw  on raw.contacts_id = opp.contact_id
-left join Amb_Source on amb_source.contacts_id = raw.contacts_id
-left join how_did_you_hear on how_did_you_hear.contacts_id2 = raw.contacts_id
-left join referral_name on raw.contacts_id = referral_name.contacts_id3
-LEFT JOIN {{ ref('stg_src_gohighlevel__pipelines') }} stage 
-  on stage.stage_id = opp.pipelineStageId
-
+select * from final
