@@ -49,7 +49,6 @@ sources:
     schema: gohighlevel_firstsavingsbank
     tables:
       - name: contacts_raw
-      - name: contacts_raw_v2
       - name: raw_pipelines
       - name: raw_opportunities
   
@@ -64,3 +63,31 @@ sources:
       - name: contacts
       - name: opportunities
       - name: pipelines
+
+  - name: src_fast_fleet_active_invetory_lists
+    schema: src_fast_fleet_active_invetory_lists
+    tables:
+      - name: batteries_battery_terminals
+      - name: belts_and_tensioners
+      - name: brass
+      - name: breaks_hubs_and_wheel_seals
+      - name: coolants_oils_and_shop_supplies
+      - name: fuel_oil_filters
+      - name: fuses
+      - name: gladhands_and_air_springs
+      - name: heater_hose_air_hose_stalk
+      - name: hose_clamps
+      - name: landing_gear_parts
+      - name: levelling_valves_and_spring_break_valves
+      - name: lights_and_light_hardware
+      - name: misc
+      - name: mud_flaps
+      - name: nuts_bolts_and_washers
+      - name: specialty_hardware
+      - name: tires
+      - name: trailer_parts_hinges
+      - name: turbo_exhaust_clamps
+      - name: uhaul
+      - name: valve_stems_and_caps
+      - name: wheel_studs
+      - name: wheels
