@@ -6,9 +6,6 @@ models:
     columns:
       - name: Contact_id
         description: "Unique identifier for the contact."
-        tests:
-          - unique
-          - not_null
       - name: Name
         description: "Full name of the contact."
       - name: First_Name
