@@ -1,8 +1,11 @@
+{{config(materialized = 'table')}}
+
+
 with 
 
 source as (
 
-    select * from {{ source('src_ghl_flh', 'raw_opportunities') }}
+    select * from {{ source('syncwith', 'raw_opportunities') }}
 
 ),
 

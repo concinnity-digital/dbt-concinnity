@@ -8,7 +8,7 @@ with a as (
             when How_did_you_hear_about_us is null then Source
             else Source
         end as Real_Source
-    from  {{ ref('flh_mtd') }}
+    from  {{ ref('int_flh__mtd') }}
 )
 
 select 

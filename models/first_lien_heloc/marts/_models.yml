@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: flh_mtd_leads
+    description: "A model for processing leads data in the FLH MTD context."
+    columns:
+      - name: Contact_id
+        description: "Unique identifier for the contact."
+        tests:
+          - unique
+          - not_null
+      - name: Name
+        description: "Full name of the contact."
+      - name: First_Name
+        description: "First name of the contact."
+      - name: Last_Name
+        description: "Last name of the contact."
+      - name: AssignedTo
+        description: "Identifier of the entity to whom the contact is assigned."
+      - name: Source
+        description: "The original source of the lead."
+      - name: How_did_you_hear_about_us
+        description: "Information on how the contact heard about the company."
+      - name: Ambassador_Source
+        description: "Source attributed to an ambassador if applicable."
+      - name: Referral_Name
+        description: "Name of the referral if the lead came through a referral."
+      - name: Status
+        description: "Current status of the lead."
+      - name: stage_name
+        description: "The stage name associated with the lead."
+      - name: Date_Created
+        description: "The date when the lead was created."
+      - name: Final_Source
+        description: "The final determined source of the lead after processing."

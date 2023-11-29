@@ -4,17 +4,17 @@ contacts as (
     select 
         contacts_id,
         contacts_dateadded,
-    from {{ ref('stg_src_ghl_flh__contacts_raw') }}
+    from {{ ref('stg_syncwith__contacts_raw') }}
 
 ),
 opportunities as (
 
-    select * from {{ ref('stg_src_ghl_flh__raw_opportunities') }}
+    select * from {{ ref('stg_syncwith__raw_opportunities') }}
     
 ),
 pipelines as (
 
-    select * from {{ ref('stg_src_gohighlevel__pipelines') }}
+    select * from {{ ref('stg_gohighlevel__pipelines') }}
     
 ),
 raw as (
@@ -28,7 +28,7 @@ raw as (
         contacts_email as Contacts_Email,
         contacts_source as Source,
         contacts_assignedto as AssignedTo
-    FROM {{ ref('stg_src_ghl_flh__contacts_raw') }}
+    FROM {{ ref('stg_syncwith__contacts_raw') }}
     
 ),
 Amb_Source as (
@@ -39,7 +39,7 @@ Amb_Source as (
         contacts_id,
         INITCAP(concat(contacts_firstname, " ",contacts_lastname)) as contacts_fullName,
         case when contacts_customfield_id IN ("UvjzjlAdNrorwQ0ZH1U4" ) then contacts_customfield_value end as Ambassador_Source
-    FROM {{ ref('stg_src_ghl_flh__contacts_raw') }}
+    FROM {{ ref('stg_syncwith__contacts_raw') }}
     WHERE contacts_customfield_id IN ("UvjzjlAdNrorwQ0ZH1U4")
 
 ),
@@ -51,7 +51,7 @@ How_did_you_hear AS (
         contacts_id as contacts_id2,
         INITCAP(concat(contacts_firstname, " ",contacts_lastname)) as contacts_fullName2,
         case when contacts_customfield_id IN ("bzq3CW9oBJSzZ6v0voII")  then contacts_customfield_value end as How_did_you_hear_about_us
-    FROM {{ ref('stg_src_ghl_flh__contacts_raw') }}
+    FROM {{ ref('stg_syncwith__contacts_raw') }}
     WHERE contacts_customfield_id IN ("bzq3CW9oBJSzZ6v0voII")
 
 ),
@@ -62,7 +62,7 @@ Referral_name AS (
         contacts_id as contacts_id3,
         INITCAP(concat(contacts_firstname, " ",contacts_lastname)) as contacts_fullName3,
         case when contacts_customfield_id IN ("zni40BEz2cLAV5jOikN1")  then contacts_customfield_value end as Referral_Name
-    FROM {{ ref('stg_src_ghl_flh__contacts_raw') }}
+    FROM {{ ref('stg_syncwith__contacts_raw') }}
     WHERE contacts_customfield_id IN ("zni40BEz2cLAV5jOikN1")
 
 ),
