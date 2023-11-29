@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('src_gohighlevel', 'pipelines') }}
+    select * from {{ source('gohighlevel', 'pipelines') }}
 
 ),
 

@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('src_mapping', 'flh_ambassador_list') }}
+    select * from {{ source('mapping', 'flh_ambassador_list') }}
 
 ),
 

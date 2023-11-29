@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('src_gohighlevel', 'contacts') }}
+    select * from {{ source('gohighlevel', 'contacts') }}
 
 ),
 
@@ -32,8 +32,7 @@ renamed as (
         country,
         lastactivity,
         customfield,
-        timezone,
-        __index_level_0__
+        timezone
 
     from source
 

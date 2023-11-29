@@ -24,30 +24,32 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-
-# Configuring models
-# Full documentation: https://docs.getdbt.com/docs/configuring-models
-
 models:
   concinnity:
-    staging:
-      +materialized: view
-      fast_fleet_sales:
-        +schema: stg_fast_fleet_sales
-      fast_fleet_mapping:
-        +schema: stg_fast_fleet_mapping
-      first_lien_heloc:
-        +schema: stg_first_lien_heloc
-      src_ghl_flh:
-        +schema: stg_src_ghl_flh
-      src_gohighlevel:
-        +schema: stg_src_gohighlevel
-      src_mapping:
-        +schema: stg_src_mapping
-
-    marts:
-      +materialized: table
-      fast_fleet:
-        +schema: marts_fast_fleet
-      first_lien_heloc:
+    fast_fleet:
+      staging:
+        +materialized: view
+        fast_fleet_sales:
+          +schema: stg_fast_fleet_sales
+        fast_fleet_mapping:
+          +schema: stg_fast_fleet_mapping
+        fast_fleet_active_invetory_lists:
+          +schema: stg_fast_fleet_active_invetory_lists
+      marts:
+        +materialized: table
+        +schema: marts_fast_fleet   
+    
+    first_lien_heloc:
+      staging:
+        gohighlevel:
+          +schema: stg_flh_go_high_level
+        mapping:
+          +schema: stg_flh_mapping
+        syncwith:
+          +schema: stg_flh_syncwith
+      intermediate:
+        +materialized: view
+        +schema: int_first_lien_heloc
+      marts:
+        +materialized: table
         +schema: marts_first_lien_heloc

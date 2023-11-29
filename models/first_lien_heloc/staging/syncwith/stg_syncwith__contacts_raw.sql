@@ -1,8 +1,10 @@
+{{config(materialized = 'table')}}
+
 with 
 
 source as (
 
-    select * from {{ source('src_ghl_flh', 'contacts_raw') }}
+    select * from {{ source('syncwith', 'contacts_raw') }}
 
 ),
 
@@ -43,6 +45,13 @@ renamed as (
 
     from source
 
+),
+
+add_calculated_fields as (
+    select 
+        renamed.*,
+        initcap(concat(contacts_firstname, " ",contacts_lastname)) as contacts_fullName
+    from renamed
 )
 
-select * from renamed
+select * from add_calculated_fields

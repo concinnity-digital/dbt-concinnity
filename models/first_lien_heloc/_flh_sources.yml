@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: syncwith
+    schema: gohighlevel_firstsavingsbank
+    tables:
+      - name: contacts_raw
+      - name: raw_pipelines
+      - name: raw_opportunities
+      - name: raw_custom_fields
+  
+  - name: mapping
+    schema: src_mapping
+    tables:
+      - name: flh_ambassador_list
+  
+  - name: gohighlevel
+    schema: src_gohighlevel
+    tables:
+      - name: contacts
+      - name: opportunities
+      - name: pipelines
+
+  
