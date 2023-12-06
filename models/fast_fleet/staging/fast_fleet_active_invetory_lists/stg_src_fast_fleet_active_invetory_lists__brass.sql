@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('src_fast_fleet_active_invetory_lists', 'batteries_battery_terminals') }}
+    select * from {{ source('src_fast_fleet_active_invetory_lists', 'brass') }}
 
 ),
 
@@ -14,12 +14,8 @@ renamed as (
         primary_vendor,
         primary_vendor__ as primary_vendor_number,
         secondary__ as secondary_number,
-        SAFE_CAST(SUBSTR(purchase_price, 2)as FLOAT64) as purchase_price,
-        sale_price,
-        t__wh_or_both,
-        min__truck_qty_,
-        truck_max,
-        min_wh_qty_
+        purchase_price,
+        sale_price
 
     from source
 

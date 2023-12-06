@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('src_fast_fleet_active_invetory_lists', 'belts_and_tensioners') }}
+    select * from {{ source('src_fast_fleet_active_invetory_lists', 'tires') }}
 
 ),
 
@@ -10,10 +10,7 @@ renamed as (
 
     select
         ff_part__ as ff_part_number,
-        description,
-        primary_vendor,
-        primary_vendor__ as primary_vendor_number,
-        secondary__ as secondary_number,
+        description_ as description,
         purchase_price,
         sale_price
 
