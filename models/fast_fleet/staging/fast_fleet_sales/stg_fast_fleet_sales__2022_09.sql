@@ -8,7 +8,7 @@ renamed as (
         Amount,
         Labor_Cost,
         Job_Supplies,
-        Gross_Revenue,
+        cast(Gross_Revenue as FLOAT64) as Gross_Revenue,
         GP_Margin,
         Service_Type,
         Classification,
