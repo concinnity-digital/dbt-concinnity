@@ -8,7 +8,62 @@
 with region_mapping as (
     select * from {{ ref('stg_fast_fleet__region_mapping') }}
 ),
+
 unioned as (
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_10') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_11') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_12') }}
+    union all
     select 
         Date,
         Customer,

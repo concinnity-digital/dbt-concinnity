@@ -3,12 +3,12 @@ with source as (
 ),
 renamed as (
     select
-        Date,
+        safe_cast(Date as DATE) as Date,
         Customer,
         Amount,
         Labor as Labor_Cost,
         Job_Supplies,
-        Gross_Revenue,
+        safe_cast(Gross_Revenue as FLOAT64) as Gross_Revenue,
         GP_Margin,
         Service_Type,
         Classification,
