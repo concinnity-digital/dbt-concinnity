@@ -73,3 +73,9 @@ sources:
       - name: valve_stems_and_caps
       - name: wheel_studs
       - name: wheels
+  - name: fastfleet_googleads
+    schema: googleads
+    tables:
+      - name: Keyword_4201378109
+      - name: Customer_4201378109
+      - name: KeywordStats_4201378109
