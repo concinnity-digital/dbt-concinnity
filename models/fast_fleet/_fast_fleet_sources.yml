@@ -73,6 +73,7 @@ sources:
       - name: valve_stems_and_caps
       - name: wheel_studs
       - name: wheels
+
   - name: fastfleet_googleads
     schema: googleads
     tables:
