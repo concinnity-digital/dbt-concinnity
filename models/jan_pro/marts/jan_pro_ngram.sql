@@ -17,7 +17,7 @@ SELECT
   keywordstats.*
   ,criterion.ad_group_criterion_keyword_text
   -- ,REGEXP_EXTRACT_ALL(lower(criterion.Criteria), '[a-z]+') as keywords_array
-  ,ML.NGRAMS(REGEXP_EXTRACT_ALL(lower(criterion.ad_group_criterion_keyword_text), '[a-z]+'), [1,3]) as ngrams
+  ,ML.NGRAMS(REGEXP_EXTRACT_ALL(lower(criterion.ad_group_criterion_keyword_text), '[a-z]+'), [1,5]) as ngrams
   ,customers.customer_descriptive_name
 FROM {{ ref('stg_jan_pro_detroit_googleads__ads_KeywordStats') }} as keywordstats
 LEFT JOIN Criterion as criterion

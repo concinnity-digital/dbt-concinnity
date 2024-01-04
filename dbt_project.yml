@@ -1,13 +1,12 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'concinnity'
-version: '1.0.0'
+name: "concinnity"
+version: "1.0.0"
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'concinnity'
+profile: "concinnity"
 
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
@@ -19,8 +18,8 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-target-path: "target"  # directory which will store compiled SQL files
-clean-targets:         # directories to be removed by `dbt clean`
+target-path: "target" # directory which will store compiled SQL files
+clean-targets: # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
@@ -35,10 +34,12 @@ models:
           +schema: stg_fast_fleet_mapping
         fast_fleet_active_invetory_lists:
           +schema: stg_fast_fleet_active_invetory_lists
+        fast_fleet_googleads:
+          +schema: stg_fast_fleet_googleads
       marts:
         +materialized: table
-        +schema: marts_fast_fleet   
-    
+        +schema: marts_fast_fleet
+
     first_lien_heloc:
       staging:
         gohighlevel:
@@ -53,3 +54,11 @@ models:
       marts:
         +materialized: table
         +schema: marts_first_lien_heloc
+
+    jan_pro:
+      staging:
+        jan_pro_googleads:
+          +schema: stg_jan_pro_googleads
+      marts:
+        +materialized: table
+        +schema: marts_jan_pro
