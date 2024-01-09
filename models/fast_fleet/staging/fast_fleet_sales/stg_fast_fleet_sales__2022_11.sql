@@ -3,7 +3,8 @@ with source as (
 ),
 renamed as (
     select
-        Date,
+        --PARSE_DATE('%m/%d/%Y', trim(Date)) as Date,
+        safe_cast(Date as Date) as Date,
         Customer,
         Amount,
         Labor as Labor_Cost,
