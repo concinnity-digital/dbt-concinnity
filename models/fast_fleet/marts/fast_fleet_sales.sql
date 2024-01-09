@@ -17,7 +17,7 @@ unioned as (
         Labor_Cost,
         Job_Supplies,
         Gross_Revenue,
-        GP_Margin, 
+        GP_Margin,
         Service_Type,
         Classification,
         Job,
