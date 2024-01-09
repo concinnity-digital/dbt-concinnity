@@ -9,7 +9,7 @@ renamed as (
         Labor_Cost,
         Job_Supplies,
         Gross_Revenue,
-        GP_Margin,
+        cast(GP_Margin as string) as GP_Margin,
         Service_Type,
         Classification,
         Job__ as Job,
