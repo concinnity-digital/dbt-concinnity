@@ -8,7 +8,7 @@ renamed as (
         Amount,
         Labor_Cost,
         Job_Supplies,
-        cast(Gross_Revenue as FLOAT64) as Gross_Revenue,
+        safe_cast(replace(Gross_Revenue, ',', '.') as FLOAT64) as Gross_Revenue,
         GP_Margin,
         Service_Type,
         Classification,

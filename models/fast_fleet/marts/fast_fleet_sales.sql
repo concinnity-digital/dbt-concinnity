@@ -17,6 +17,168 @@ unioned as (
         Labor_Cost,
         Job_Supplies,
         Gross_Revenue,
+        GP_Margin, 
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_01') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_02') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_03') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_04') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_05') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_06') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_07') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_08') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
+        GP_Margin,
+        Service_Type,
+        Classification,
+        Job,
+        Payment_Method,
+        Truck,    
+        Lead_Source,    
+        Notes,
+        null as Shift
+    from {{ ref('stg_fast_fleet_sales__2022_09') }}
+    union all
+    select 
+        Date,
+        Customer,
+        Amount,
+        Labor_Cost,
+        Job_Supplies,
+        Gross_Revenue,
         GP_Margin,
         Service_Type,
         Classification,
