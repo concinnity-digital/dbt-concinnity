@@ -14,6 +14,7 @@ renamed as (
         contactname,
         firstname,
         lastname,
+        INITCAP(concat(firstName, " ",lastName)) as fullName, 
         companyname,
         email,
         phone,
