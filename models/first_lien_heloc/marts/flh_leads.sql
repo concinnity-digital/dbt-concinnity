@@ -34,7 +34,7 @@ child_ambassador AS (
 
     SELECT 
         contacts.* except (source), 
-        custom_fields.name 
+        custom_field_value
     FROM contacts
 
     LEFT JOIN contact_customfield
@@ -51,7 +51,7 @@ final as (
         distinct leads.* ,
         opportunities.* except (Id, name, assignedto,source),
         pipelines.* except (Id, Name, locationid),
-        child_ambassador.name as child_ambassador
+        custom_field_value as child_ambassador
     from leads
     left join opportunities 
         on leads.id = opportunities.contact_id
