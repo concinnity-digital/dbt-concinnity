@@ -35,9 +35,10 @@ leads as (
 child_ambassador AS (
 
   SELECT 
-    contacts.* except (tags, source), 
+    contacts.* except (source), 
     custom_fields.name 
   FROM contacts
+  
   LEFT JOIN contact_customfield
   ON contact_customfield.contact_id = contacts.id
 
