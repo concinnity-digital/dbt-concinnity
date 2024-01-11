@@ -15,50 +15,50 @@ custom_fields as (
 ),
 leads as (
 
-  SELECT 
-    DENSE_RANK() OVER (PARTITION BY email ORDER BY dateUpdated DESC) as email_rank, 
-    contacts.* except (tags, source),
-    
+  select 
+    dense_rank() over (partition by email order by dateupdated desc) as email_rank, 
+    contacts.* except (tags, source),    
     case 
-      when custom_field_id IN ("XsBMwip7fKtXHoFfqdoa" ,"zni40BEz2cLAV5jOikN1","UvjzjlAdNrorwQ0ZH1U4") AND custom_field_value = "Zach Ohlmoen" then "Zach Oehlman"
-      when custom_field_id IN ("XsBMwip7fKtXHoFfqdoa" ,"zni40BEz2cLAV5jOikN1","UvjzjlAdNrorwQ0ZH1U4") AND custom_field_value = "Sebastien  Boyer" then "Sébastien Boyer"
-      when custom_field_id IN ("XsBMwip7fKtXHoFfqdoa" ,"zni40BEz2cLAV5jOikN1","UvjzjlAdNrorwQ0ZH1U4") then TRIM(INITCAP(custom_field_value)) end as Ambassador,
+        when custom_field_id IN ("XsBMwip7fKtXHoFfqdoa" ,"zni40BEz2cLAV5jOikN1","UvjzjlAdNrorwQ0ZH1U4") AND custom_field_value = "Zach Ohlmoen" then "Zach Oehlman"
+        when custom_field_id IN ("XsBMwip7fKtXHoFfqdoa" ,"zni40BEz2cLAV5jOikN1","UvjzjlAdNrorwQ0ZH1U4") AND custom_field_value = "Sebastien  Boyer" then "Sébastien Boyer"
+        when custom_field_id IN ("XsBMwip7fKtXHoFfqdoa" ,"zni40BEz2cLAV5jOikN1","UvjzjlAdNrorwQ0ZH1U4") then TRIM(INITCAP(custom_field_value)) 
+    end as Ambassador
   FROM contacts
-
-  LEFT JOIN contact_customfield
-  ON contact_customfield.contact_id = contacts.id
-
-  WHERE custom_field_id IN ("UvjzjlAdNrorwQ0ZH1U4")
-  and CONTAINS_SUBSTR(tags, "ambassadorlead") 
+  left join contact_customfield
+    on contact_customfield.contact_id = contacts.id
+  where custom_field_id IN ("UvjzjlAdNrorwQ0ZH1U4")
+    and contains_substr(tags, "ambassadorlead") 
 ),
 
 child_ambassador AS (
 
-  SELECT 
-    contacts.* except (source), 
-    custom_fields.name 
-  FROM contacts
-  
-  LEFT JOIN contact_customfield
-  ON contact_customfield.contact_id = contacts.id
+    SELECT 
+        contacts.* except (source), 
+        custom_fields.name 
+    FROM contacts
 
-  LEFT JOIN custom_fields
-  ON contact_customfield.custom_field_id = custom_fields.id
-  WHERE custom_field_id IN ("TI9CjrQW6XvO1cQSdrS0")
+    LEFT JOIN contact_customfield
+        ON contact_customfield.contact_id = contacts.id
+
+    LEFT JOIN custom_fields
+        ON contact_customfield.custom_field_id = custom_fields.id
+    WHERE custom_field_id IN ("TI9CjrQW6XvO1cQSdrS0")
+
 ),
 
 final as (
     select 
-    distinct leads.* ,
-    opportunities.* except (Id, name, assignedto,source),
-    pipelines.* except (Id, Name, locationid),
-    child_ambassador.name as child_ambassador
+        distinct leads.* ,
+        opportunities.* except (Id, name, assignedto,source),
+        pipelines.* except (Id, Name, locationid),
+        child_ambassador.name as child_ambassador
     from leads
     left join opportunities 
-    on leads.id = opportunities.contact_id
+        on leads.id = opportunities.contact_id
     LEFT JOIN pipelines 
-    on pipelines.Id = opportunities.pipelineStageId
-    LEFT JOIN child_ambassador on leads.id = child_ambassador.id
+        on pipelines.stage_Id = opportunities.pipelineStageId
+    LEFT JOIN child_ambassador 
+        on leads.id = child_ambassador.id
     where leads.email_rank = 1
 )
 
