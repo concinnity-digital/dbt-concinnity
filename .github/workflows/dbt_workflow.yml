@@ -1,0 +1,28 @@
+name: dbt BigQuery
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+
+env:
+  # dbt env variables used in your dbt profiles.yml
+  DBT_PROFILES_DIR: ./
+  DBT_GOOGLE_PROJECT: ${{ vars.DBT_GOOGLE_PROJECT }}
+  DBT_GOOGLE_DATASET: ${{ vars.DBT_GOOGLE_DATASET }}
+  
+  # the contents of the keyfile pulled from GitHub Actions secrets 
+  KEYFILE_CONTENTS: ${{secrets.KEYFILE_CONTENTS}}
+
+jobs:
+  dbt_scheduled_run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: "actions/checkout@main"
+
+      - name: install requirements
+        run: pip install -q -r requirements.txt
+        
+      - name: dbt build
+        run: |
+          dbt build
