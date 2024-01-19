@@ -1,0 +1,37 @@
+name: DBT Build on PR
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - '!main'
+
+jobs:
+  dbt_run_on_pr:
+    runs-on: ubuntu-latest
+    env:
+      # dbt env variables used in your dbt profiles.yml
+      DBT_PROFILES_DIR: ./
+      DBT_GOOGLE_PROJECT: ${{ vars.DBT_GOOGLE_PROJECT }}
+      DBT_GOOGLE_DATASET: ${{ vars.DBT_GOOGLE_DATASET }}
+      
+      # the contents of the keyfile pulled from GitHub Actions secrets 
+      KEYFILE_CONTENTS: ${{secrets.KEYFILE_CONTENTS}}
+
+    steps:
+      - uses: "actions/checkout@main"
+
+      - name: install requirements
+        run: pip install -q -r requirements.txt
+
+      - name: dbt deps
+        run: |
+          cd dbt_project 
+          dbt deps
+        
+      - name: dbt build
+        run: |
+          cd dbt_project 
+          dbt build --target prod
