@@ -33,5 +33,4 @@ jobs:
         
       - name: dbt build
         run: |
-          cd dbt_project 
           dbt build --target prod
