@@ -28,7 +28,7 @@ jobs:
 
       - name: Set up Google Cloud credentials
         run: |
-          echo "${{secrets.KEYFILE_CONTENTS}}" > /tmp/dbt_keyfile.json
+          echo "${{ secrets.KEYFILE_CONTENTS }}" | base64 -d > /tmp/dbt_keyfile.json
           
       - name: dbt deps
         run: |
