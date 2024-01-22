@@ -25,4 +25,4 @@ jobs:
         
       - name: dbt build
         run: |
-          dbt build
+          dbt build --target prod

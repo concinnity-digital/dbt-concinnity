@@ -11,7 +11,6 @@ concinnity:
       project: concinnity
       threads: 4
       type: bigquery
-  target: dev
     prod:
       dataset: prod
       job_execution_timeout_seconds: 300
@@ -23,4 +22,4 @@ concinnity:
       project: concinnity
       threads: 4
       type: bigquery
-  target: prod
+  target: dev
