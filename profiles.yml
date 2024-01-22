@@ -4,7 +4,7 @@ concinnity:
       dataset: dev
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: ${{secrets.KEYFILE_CONTENTS}}
+      keyfile: /tmp/dbt_keyfile.json
       location: US
       method: service-account
       priority: interactive
@@ -15,7 +15,7 @@ concinnity:
       dataset: prod
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: ${{secrets.KEYFILE_CONTENTS}}
+      keyfile: /tmp/dbt_keyfile.json
       location: US
       method: service-account
       priority: interactive
