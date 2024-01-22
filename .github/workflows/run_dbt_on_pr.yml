@@ -26,12 +26,14 @@ jobs:
       - name: install requirements
         run: pip install -q -r requirements.txt
 
+      - name: Set up Google Cloud credentials
+        run: |
+          echo "${{ secrets.KEYFILE_CONTENTS }}" | base64 -d > /tmp/dbt_keyfile.json
+          
       - name: dbt deps
         run: |
-          cd dbt_project 
           dbt deps
         
       - name: dbt build
         run: |
-          cd dbt_project 
           dbt build --target prod

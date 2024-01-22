@@ -4,7 +4,18 @@ concinnity:
       dataset: dev
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: /Users/merlynvillacorta/Documents/Concinnity/dbt.json
+      keyfile: /tmp/dbt_keyfile.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: concinnity
+      threads: 4
+      type: bigquery
+    prod:
+      dataset: prod
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /tmp/dbt_keyfile.json
       location: US
       method: service-account
       priority: interactive
@@ -12,15 +23,3 @@ concinnity:
       threads: 4
       type: bigquery
   target: dev
-    prod:
-      dataset: prod
-      job_execution_timeout_seconds: 300
-      job_retries: 1
-      keyfile: /Users/merlynvillacorta/Documents/Concinnity/dbt.json
-      location: US
-      method: service-account
-      priority: interactive
-      project: concinnity
-      threads: 4
-      type: bigquery
-  target: prod
