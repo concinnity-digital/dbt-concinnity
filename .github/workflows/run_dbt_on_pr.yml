@@ -28,7 +28,6 @@ jobs:
 
       - name: dbt deps
         run: |
-          cd dbt_project 
           dbt deps
         
       - name: dbt build
