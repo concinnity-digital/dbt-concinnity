@@ -1,9 +1,10 @@
 with Criterion as(
 select
   ad_group_criterion_criterion_id,
-  ad_group_criterion_keyword_text
+  ad_group_criterion_keyword_text,
+  ad_group_criterion_quality_info_quality_score
 from {{ ref('stg_jan_pro_detroit_googleads__ads_Keyword') }}
-group by 1,2
+group by 1,2,3
 ),
 customers as (
 SELECT 
@@ -16,6 +17,7 @@ group by 1,2
 SELECT 
   keywordstats.*
   ,criterion.ad_group_criterion_keyword_text
+  ,criterion.ad_group_criterion_quality_info_quality_score
   ,customers.customer_descriptive_name
 FROM {{ ref('stg_jan_pro_detroit_googleads__ads_KeywordStats') }} as keywordstats
 LEFT JOIN Criterion as criterion
