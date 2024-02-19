@@ -1,10 +1,18 @@
 version: 2
 
 sources:
-  - name: jan_pro_googleads
+  - name: src_jan_pro_detroit_googleads
     schema: src_jan_pro_detroit_googleads
     tables:
       - name: ads_Keyword_8432795746
       - name: ads_Customer_8432795746
       - name: ads_KeywordStats_8432795746
       - name: ads_SearchQueryStats_8432795746
+
+  - name: src_jan_pro_chicago_googleads
+    schema: src_jan_pro_chicago_googleads
+    tables:
+      - name: ads_Keyword_8579842656
+      - name: ads_Customer_8579842656
+      - name: ads_KeywordStats_8579842656
+      - name: ads_SearchQueryStats_8579842656
