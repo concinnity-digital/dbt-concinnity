@@ -16,3 +16,11 @@ sources:
       - name: ads_Customer_8579842656
       - name: ads_KeywordStats_8579842656
       - name: ads_SearchQueryStats_8579842656
+
+  - name: src_jan_pro_cincinnati_googleads
+    schema: src_jan_pro_cincinnati_googleads
+    tables:
+      - name: ads_Keyword_9075039811
+      - name: ads_Customer_9075039811
+      - name: ads_KeywordStats_9075039811
+      - name: ads_SearchQueryStats_9075039811

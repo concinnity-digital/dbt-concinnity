@@ -5,6 +5,8 @@ source as (
     select * from {{ source('src_jan_pro_detroit_googleads', 'ads_KeywordStats_8432795746') }}
     union all 
     select * from {{ source('src_jan_pro_chicago_googleads', 'ads_KeywordStats_8579842656') }}
+    union all 
+    select * from {{ source('src_jan_pro_cincinnati_googleads', 'ads_KeywordStats_9075039811') }}
 
 ),
 
