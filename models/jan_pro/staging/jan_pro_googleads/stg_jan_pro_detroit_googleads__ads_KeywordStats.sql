@@ -7,6 +7,12 @@ source as (
     select * from {{ source('src_jan_pro_chicago_googleads', 'ads_KeywordStats_8579842656') }}
     union all 
     select * from {{ source('src_jan_pro_cincinnati_googleads', 'ads_KeywordStats_9075039811') }}
+    union all 
+    select * from {{ source('src_jan_pro_east_googleads', 'ads_KeywordStats_6611074754') }}
+    union all 
+    select * from {{ source('src_jan_pro_houston_googleads', 'ads_KeywordStats_3789896045') }}
+    union all 
+    select * from {{ source('src_jan_pro_massachusetts_googleads', 'ads_KeywordStats_4308472741') }}
 
 ),
 

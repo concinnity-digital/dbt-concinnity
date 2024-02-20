@@ -24,3 +24,27 @@ sources:
       - name: ads_Customer_9075039811
       - name: ads_KeywordStats_9075039811
       - name: ads_SearchQueryStats_9075039811
+
+  - name: src_jan_pro_east_googleads
+    schema: src_jan_pro_east_googleads
+    tables:
+      - name: ads_Keyword_6611074754
+      - name: ads_Customer_6611074754
+      - name: ads_KeywordStats_6611074754
+      - name: ads_SearchQueryStats_6611074754
+
+  - name: src_jan_pro_houston_googleads
+    schema: src_jan_pro_houston_googleads
+    tables:
+      - name: ads_Keyword_3789896045
+      - name: ads_Customer_3789896045
+      - name: ads_KeywordStats_3789896045
+      - name: ads_SearchQueryStats_3789896045
+
+  - name: src_jan_pro_massachusetts_googleads
+    schema: src_jan_pro_massachusetts_googleads
+    tables:
+      - name: ads_Keyword_4308472741
+      - name: ads_Customer_4308472741
+      - name: ads_KeywordStats_4308472741
+      - name: ads_SearchQueryStats_4308472741
