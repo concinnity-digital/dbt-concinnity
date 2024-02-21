@@ -13,6 +13,18 @@ source as (
     select * from {{ source('src_jan_pro_houston_googleads', 'ads_KeywordStats_3789896045') }}
     union all 
     select * from {{ source('src_jan_pro_massachusetts_googleads', 'ads_KeywordStats_4308472741') }}
+    union all 
+    select * from {{ source('src_jan_pro_nashville_googleads', 'ads_KeywordStats_7579569593') }}
+    union all 
+    select * from {{ source('src_jan_pro_north_newjersy_googleads', 'ads_KeywordStats_5011305995') }}
+    union all 
+    select * from {{ source('src_jan_pro_northeast_wisconsin_googleads', 'ads_KeywordStats_6640275400') }}
+    union all 
+    select * from {{ source('src_jan_pro_raleigh_googleads', 'ads_KeywordStats_9943921311') }}
+    union all 
+    select * from {{ source('src_jan_pro_triad_googleads', 'ads_KeywordStats_6782279639') }}
+    union all 
+    select * from {{ source('src_jan_pro_utah_googleads', 'ads_KeywordStats_9732427360') }}
 
 ),
 
