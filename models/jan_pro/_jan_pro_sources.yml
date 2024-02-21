@@ -48,3 +48,51 @@ sources:
       - name: ads_Customer_4308472741
       - name: ads_KeywordStats_4308472741
       - name: ads_SearchQueryStats_4308472741
+
+  - name: src_jan_pro_nashville_googleads
+    schema: src_jan_pro_nashville_googleads
+    tables:
+      - name: ads_Keyword_7579569593
+      - name: ads_Customer_7579569593
+      - name: ads_KeywordStats_7579569593
+      - name: ads_SearchQueryStats_7579569593
+
+  - name: src_jan_pro_north_newjersy_googleads
+    schema: src_jan_pro_north_newjersy_googleads
+    tables:
+      - name: ads_Keyword_5011305995
+      - name: ads_Customer_5011305995
+      - name: ads_KeywordStats_5011305995
+      - name: ads_SearchQueryStats_5011305995
+
+  - name: src_jan_pro_northeast_wisconsin_googleads
+    schema: src_jan_pro_northeast_wisconsin_googleads
+    tables:
+      - name: ads_Keyword_6640275400
+      - name: ads_Customer_6640275400
+      - name: ads_KeywordStats_6640275400
+      - name: ads_SearchQueryStats_6640275400
+
+  - name: src_jan_pro_raleigh_googleads
+    schema: src_jan_pro_raleigh_googleads
+    tables:
+      - name: ads_Keyword_9943921311
+      - name: ads_Customer_9943921311
+      - name: ads_KeywordStats_9943921311
+      - name: ads_SearchQueryStats_9943921311
+
+  - name: src_jan_pro_triad_googleads
+    schema: src_jan_pro_triad_googleads
+    tables:
+      - name: ads_Keyword_6782279639
+      - name: ads_Customer_6782279639
+      - name: ads_KeywordStats_6782279639
+      - name: ads_SearchQueryStats_6782279639
+
+  - name: src_jan_pro_utah_googleads
+    schema: src_jan_pro_utah_googleads
+    tables:
+      - name: ads_Keyword_9732427360
+      - name: ads_Customer_9732427360
+      - name: ads_KeywordStats_9732427360
+      - name: ads_SearchQueryStats_9732427360
