@@ -96,3 +96,91 @@ sources:
       - name: ads_Customer_9732427360
       - name: ads_KeywordStats_9732427360
       - name: ads_SearchQueryStats_9732427360
+
+  - name: src_jan_pro_capital_district_googleads
+    schema: src_jan_pro_capital_district_googleads
+    tables:
+      - name: ads_Keyword_2074361282
+      - name: ads_Customer_2074361282
+      - name: ads_KeywordStats_2074361282
+      - name: ads_SearchQueryStats_2074361282
+
+  - name: src_jan_pro_se_la_googleads
+    schema: src_jan_pro_se_la_googleads
+    tables:
+      - name: ads_Keyword_3025679247
+      - name: ads_Customer_3025679247
+      - name: ads_KeywordStats_3025679247
+      - name: ads_SearchQueryStats_3025679247
+
+  - name: src_jan_pro_central_ga_googleads
+    schema: src_jan_pro_central_ga_googleads
+    tables:
+      - name: ads_Keyword_7181072284
+      - name: ads_Customer_7181072284
+      - name: ads_KeywordStats_7181072284
+      - name: ads_SearchQueryStats_7181072284
+
+  - name: src_jan_pro_twin_cities_googleads
+    schema: src_jan_pro_twin_cities_googleads
+    tables:
+      - name: ads_Keyword_3696124117
+      - name: ads_Customer_3696124117
+      - name: ads_KeywordStats_3696124117
+      - name: ads_SearchQueryStats_3696124117
+
+  - name: src_jan_pro_new_england_googleads
+    schema: src_jan_pro_new_england_googleads
+    tables:
+      - name: ads_Keyword_1623951494
+      - name: ads_Customer_1623951494
+      - name: ads_KeywordStats_1623951494
+      - name: ads_SearchQueryStats_1623951494
+
+  - name: src_jan_pro_west_michigan_googleads
+    schema: src_jan_pro_west_michigan_googleads
+    tables:
+      - name: ads_Keyword_3723961690
+      - name: ads_Customer_3723961690
+      - name: ads_KeywordStats_3723961690
+      - name: ads_SearchQueryStats_3723961690
+
+  - name: src_jan_pro_sacramento_googleads
+    schema: src_jan_pro_sacramento_googleads
+    tables:
+      - name: ads_Keyword_9810903396
+      - name: ads_Customer_9810903396
+      - name: ads_KeywordStats_9810903396
+      - name: ads_SearchQueryStats_9810903396
+
+  - name: src_jan_pro_philadelphia_googleads
+    schema: src_jan_pro_philadelphia_googleads
+    tables:
+      - name: ads_Keyword_2550005947
+      - name: ads_Customer_2550005947
+      - name: ads_KeywordStats_2550005947
+      - name: ads_SearchQueryStats_2550005947
+
+  - name: src_jan_pro_pittsburgh_googleads
+    schema: src_jan_pro_pittsburgh_googleads
+    tables:
+      - name: ads_Keyword_4453396546
+      - name: ads_Customer_4453396546
+      - name: ads_KeywordStats_4453396546
+      - name: ads_SearchQueryStats_4453396546
+
+  - name: src_jan_pro_jacksonville_googleads
+    schema: src_jan_pro_jacksonville_googleads
+    tables:
+      - name: ads_Keyword_5708690078
+      - name: ads_Customer_5708690078
+      - name: ads_KeywordStats_5708690078
+      - name: ads_SearchQueryStats_5708690078
+      
+  - name: src_jan_pro_georgia_aiken_googleads
+    schema: src_jan_pro_georgia_aiken_googleads
+    tables:
+      - name: ads_Keyword_9991303300
+      - name: ads_Customer_9991303300
+      - name: ads_KeywordStats_9991303300
+      - name: ads_SearchQueryStats_9991303300
