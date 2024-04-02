@@ -43,6 +43,7 @@ sources:
       - name: '2024_01'
       - name: '2024_02'
       - name: '2024_03'
+      - name: '2024_04'
 
   - name: src_fast_fleet_mapping
     schema: src_fast_fleet_mapping
