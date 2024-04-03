@@ -18,7 +18,7 @@ renamed as (
         Payment_Method,
         Shift,
         initcap(trim(Lead_Source)) as Lead_Source,
-        Notes,
+        Notes
     from source
     where Date is not null
 )
