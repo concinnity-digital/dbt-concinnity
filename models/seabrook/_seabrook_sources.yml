@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: analytics_425270834
+    schema: analytics_425270834
+    tables:
+      - name: events_20240411
+
+ 
