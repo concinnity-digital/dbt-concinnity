@@ -14,7 +14,7 @@ custom_fields as (
     select * from {{ ref('stg_gohighlevel__custom_fields') }}
 ),
 flh_cmp_opportunities as (
-    select contact_id_opportunities,stage_name,pipeline_name from {{ ref('stg_gohighlevel__flh_cmp_opportunities') }}
+    select contact_id_opportunities,stage_name,pipeline_name,status from {{ ref('stg_gohighlevel__flh_cmp_opportunities') }}
 ),
 leads as (
 
@@ -52,7 +52,7 @@ child_ambassador AS (
 final as (
     select 
         distinct leads.* ,
-        opportunities.* except (Id, name, assignedto,source),
+        opportunities.* except (Id, name, assignedto,source,status),
         --pipelines.* except (Id, Name, locationid),
         flh_cmp_opportunities.*,
         custom_field_value as child_ambassador
