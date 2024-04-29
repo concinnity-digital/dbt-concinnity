@@ -13,6 +13,9 @@ pipelines as (
 custom_fields as (
     select * from {{ ref('stg_gohighlevel__custom_fields') }}
 ),
+flh_cmp_opportunities as (
+    select contact_id_opportunities,stage_name,pipeline_name from {{ ref('stg_gohighlevel__flh_cmp_opportunities') }}
+),
 leads as (
 
   select 
@@ -50,13 +53,16 @@ final as (
     select 
         distinct leads.* ,
         opportunities.* except (Id, name, assignedto,source),
-        pipelines.* except (Id, Name, locationid),
+        --pipelines.* except (Id, Name, locationid),
+        flh_cmp_opportunities.*,
         custom_field_value as child_ambassador
     from leads
     left join opportunities 
         on leads.id = opportunities.contact_id
-    LEFT JOIN pipelines 
-        on pipelines.stage_Id = opportunities.pipelineStageId
+    --LEFT JOIN pipelines 
+    --    on pipelines.stage_Id = opportunities.pipelineStageId
+    left join flh_cmp_opportunities 
+        on leads.id = flh_cmp_opportunities.contact_id_opportunities
     LEFT JOIN child_ambassador 
         on leads.id = child_ambassador.id
     where leads.email_rank = 1
