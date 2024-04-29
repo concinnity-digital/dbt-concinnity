@@ -9,7 +9,7 @@ source as (
 renamed as (
 
     select
-        string_field_0 as contact_id,
+        string_field_0 as contact_id_opportunities,
         string_field_1 as contact_name,
         string_field_2 as id,
         string_field_3 as name,
