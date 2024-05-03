@@ -22,3 +22,4 @@ sources:
       - name: pipelines
       - name: custom_fields
       - name: flh_cmp_opportunities
+      - name: flh_cmp_contacts
