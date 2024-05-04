@@ -16,7 +16,7 @@ renamed as (
         companyname,
         phone,
         email,
-        ambassador_source,
+        cast(ambassador_source as string) as ambassador,
         child_ambassador,
         dateadded,
         dateupdated
