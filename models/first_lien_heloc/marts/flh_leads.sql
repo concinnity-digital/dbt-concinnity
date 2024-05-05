@@ -2,7 +2,7 @@ with contacts as (
     select * from {{ ref('stg_gohighlevel__flh_cmp_contacts') }}
 ),
 flh_cmp_opportunities as (
-    select contact_id_opportunities,stage_name,pipeline_name,status from {{ ref('stg_gohighlevel__flh_cmp_opportunities') }}
+    select contact_id_opportunities,stage_name,pipeline_name,status,ambassador_source from {{ ref('stg_gohighlevel__flh_cmp_opportunities') }}
 ),
 leads as (
 
