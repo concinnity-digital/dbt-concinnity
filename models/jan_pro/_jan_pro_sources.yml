@@ -184,3 +184,9 @@ sources:
       - name: ads_Customer_9991303300
       - name: ads_KeywordStats_9991303300
       - name: ads_SearchQueryStats_9991303300
+
+  - name: src_jan_pro_lsa
+    schema: src_jan_pro_lsa
+    tables:
+      - name: detroit
+      - name: east
