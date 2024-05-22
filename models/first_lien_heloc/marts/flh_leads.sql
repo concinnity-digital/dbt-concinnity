@@ -4,7 +4,7 @@ with
         from {{ ref("stg_gohighlevel__flh_cmp_opportunities") }}
     ),
     flh_cmp_contacts as (
-        select id, dateadded, phone, email, firstname, lastname, ambassador
+        select id, dateadded, phone, email, firstname, lastname, ambassador_source
         from {{ ref("stg_gohighlevel__flh_cmp_contacts") }}
     ),
     leads as (
@@ -18,7 +18,7 @@ with
     final as (
         select leads.*, flh_cmp_contacts.*
         from leads
-        left join flh_cmp_contacts on leads.contact_id_opportunities = flh_cmp_contacts.id
+        left join flh_cmp_contacts on leads.contact_id = flh_cmp_contacts.id
         where leads.email_rank = 1 and flh_cmp_contacts.id is not null
     )
 
