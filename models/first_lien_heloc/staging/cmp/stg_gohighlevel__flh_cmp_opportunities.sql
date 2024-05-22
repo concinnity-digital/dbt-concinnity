@@ -11,7 +11,7 @@ renamed as (
     select
         string_field_0 as contact_id_opportunities,
         string_field_1 as contactname,
-        string_field_2 as id,
+        string_field_2 as opportuniy_id,
         string_field_4 as pipeline_name,
         string_field_5 as stage_name,
         string_field_6 as opportunity_assignedto,
