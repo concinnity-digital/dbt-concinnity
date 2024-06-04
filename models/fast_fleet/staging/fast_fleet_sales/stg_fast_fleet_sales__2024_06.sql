@@ -1,5 +1,5 @@
 with source as (
-    select * from {{ source("src_fast_fleet_sales","2024_05") }}
+    select * from {{ source("src_fast_fleet_sales","2024_06") }}
 ),
 renamed as (
     select
