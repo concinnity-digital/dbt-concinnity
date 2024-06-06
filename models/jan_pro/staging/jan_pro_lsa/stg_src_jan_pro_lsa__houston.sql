@@ -8,8 +8,8 @@ with source as (
         *,
         trim(split(date_received, ' at')[0]) as date1,
         trim(split(date_received, ' at')[1]) as time,
-        "JP Utah" as location
-    from {{ source('src_jan_pro_lsa', 'utah') }}
+        "JP East" as location
+    from {{ source('src_jan_pro_lsa', 'houston') }}
 ),
 
 renamed as (

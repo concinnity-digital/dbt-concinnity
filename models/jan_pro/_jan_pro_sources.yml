@@ -190,6 +190,7 @@ sources:
     tables:
       - name: detroit
       - name: east
+      - name: houston
       - name: minneapolis
       - name: new_jersey
       - name: jacksonville
