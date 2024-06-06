@@ -14,6 +14,8 @@ unioned as (
     union all 
     select * from {{ ref('stg_src_jan_pro_lsa__east') }}
     union all 
+    select * from {{ ref('stg_src_jan_pro_lsa__houston') }}
+    union all 
     select * from {{ ref('stg_src_jan_pro_lsa__jacksonville') }}
     union all 
     select * from {{ ref('stg_src_jan_pro_lsa__minneapolis') }}
