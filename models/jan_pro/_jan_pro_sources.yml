@@ -205,3 +205,16 @@ sources:
       - name: raleigh
       - name: nashville
       - name: utah
+
+  - name: src_jan_pro_inside_sales_appointments
+    schema: src_jan_pro_inside_sales_appointments
+    tables:
+      - name: east_tn_is
+      - name: everline_is
+      - name: nashville_is
+      - name: raleigh_is
+      - name: sacramento_is
+      - name: utah_is
+      
+      
+    
