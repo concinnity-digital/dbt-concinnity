@@ -10,8 +10,8 @@ renamed as (
 
     select
         cast(timestamp as string) as timestamp,
-        date_worked,
-        proposed_date_of_appointment,
+        cast(date_worked as Date) as date_worked,
+        cast(proposed_date_of_appointment as date) as proposed_date_of_appointment,
         organization,
         address,
         inside_sales_staff,
@@ -21,6 +21,8 @@ renamed as (
 
     from source
     where timestamp is not null
+      AND notes NOT LIKE '%test%' 
+      AND notes NOT LIKE '%TEST%'
 
 )
 

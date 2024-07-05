@@ -1,27 +1,29 @@
-with 
+with
 
-source as (
+    source as (
 
-    select * from {{ source('src_jan_pro_inside_sales_appointments', 'east_tn_is') }}
+        select *
+        from {{ source("src_jan_pro_inside_sales_appointments", "east_tn_is") }}
 
-),
+    ),
 
-renamed as (
+    renamed as (
 
-    select
-        cast(timestamp as string) as timestamp,
-        date_worked,
-        proposed_date_of_appointment,
-        organization,
-        address,
-        inside_sales_staff,
-        appointment_details_scope,
-        notes,
-        cast(account as string) as account
+        select
+            cast(timestamp as string) as timestamp,
+            cast(date_worked as Date) as date_worked,
+            cast(proposed_date_of_appointment as date) as proposed_date_of_appointment,
+            organization,
+            address,
+            inside_sales_staff,
+            appointment_details_scope,
+            notes,
+            cast(account as string) as account
 
-    from source
-    where timestamp is not null
+        from source
+        where timestamp is not null
+        OR notes NOT LIKE '%test%'
 
-)
+    )
 
 select * from renamed
