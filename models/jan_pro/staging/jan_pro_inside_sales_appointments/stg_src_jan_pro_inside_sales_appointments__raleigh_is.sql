@@ -17,7 +17,8 @@ renamed as (
         inside_sales_staff,
         appointment_details_scope,
         notes,
-        cast(null as string) as account
+        cast(null as string) as account,
+        "JP Raleigh" as location
 
     from source
     where timestamp is not null
