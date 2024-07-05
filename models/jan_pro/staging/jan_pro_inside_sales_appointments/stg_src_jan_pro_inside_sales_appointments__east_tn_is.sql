@@ -18,7 +18,8 @@ with
             inside_sales_staff,
             appointment_details_scope,
             notes,
-            cast(account as string) as account
+            cast(account as string) as account,
+            "JP East TN" as location
 
         from source
         where timestamp is not null
