@@ -9,17 +9,18 @@ source as (
 renamed as (
 
     select
-        timestamp as string,
-        account,
+        cast(timestamp as string) as timestamp,
         date_worked,
         proposed_date_of_appointment,
         organization,
         address,
         inside_sales_staff,
         appointment_details_scope,
-        notes
+        notes,
+        cast(account as string) as account
 
     from source
+    where timestamp is not null
 
 )
 
