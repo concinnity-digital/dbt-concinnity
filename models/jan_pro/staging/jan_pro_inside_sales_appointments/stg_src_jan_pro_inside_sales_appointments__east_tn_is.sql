@@ -18,6 +18,13 @@ with
             inside_sales_staff,
             appointment_details_scope,
             notes,
+            valid_ as valid,
+            proposal_ as proposal,
+            closed_ as closed,
+            date_closed as date_closed,
+            contract_rev,
+            commission,
+            paid_ as paid,
             cast(account as string) as account,
             "JP East TN" as location
 

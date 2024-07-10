@@ -17,6 +17,13 @@ renamed as (
         inside_sales_staff,
         appointment_details_scope,
         notes,
+        valid_ as valid,
+        proposal_ as proposal,
+        closed_ as closed,
+        date_closed as date_closed,
+        contract_rev,
+        commission,
+        paid_ as paid,
         cast(null as string) as account,
         "JP Everline" as location
 
