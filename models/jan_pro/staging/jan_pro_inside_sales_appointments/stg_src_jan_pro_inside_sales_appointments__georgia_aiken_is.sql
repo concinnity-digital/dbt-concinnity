@@ -21,7 +21,7 @@ renamed as (
         proposal_ as proposal,
         closed_ as closed,
         date_closed as date_closed,
-        contract_rev,
+        safe_cast(contract_rev as integer) as contract_rev,
         commission,
         paid_ as paid,
         cast(null as string) as account,
