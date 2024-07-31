@@ -206,8 +206,8 @@ sources:
       - name: nashville
       - name: utah
 
-  - name: src_jan_pro_inside_sales_appointments
-    schema: src_jan_pro_inside_sales_appointments
+  - name: src_jan_pro_inside_sales
+    schema: src_jan_pro_inside_sales
     tables:
       - name: east_tn_is
       - name: everline_is
@@ -218,6 +218,8 @@ sources:
       - name: hampton_is
       - name: georgia_aiken_is
       - name: tulsa_is
+      - name: houston_is
+      - name: detroit_is
       
       
       

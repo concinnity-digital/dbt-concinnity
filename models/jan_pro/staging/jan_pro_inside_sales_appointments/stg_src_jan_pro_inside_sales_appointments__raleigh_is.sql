@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('src_jan_pro_inside_sales_appointments', 'raleigh_is') }}
+    select * from {{ source('src_jan_pro_inside_sales', 'raleigh_is') }}
 
 ),
 
@@ -21,8 +21,9 @@ renamed as (
         proposal_ as proposal,
         closed_ as closed,
         date_closed as date_closed,
-        safe_cast(contract_rev as integer) as contract_rev,
-        commission,
+        safe_cast(contract_revenue as integer) as contract_rev,
+        appointment_commission,
+        closed_sale_commission,
         paid_ as paid,
         cast(null as string) as account,
         "JP Raleigh" as location

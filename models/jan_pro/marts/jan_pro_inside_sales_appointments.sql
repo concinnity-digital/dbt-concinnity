@@ -20,6 +20,10 @@ unioned as (
     select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__georgia_aiken_is') }}
     union all 
     select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__tulsa_is') }}
+    union all 
+    select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__houston_is') }}
+    union all 
+    select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__detroit_is') }}
 
 )
 

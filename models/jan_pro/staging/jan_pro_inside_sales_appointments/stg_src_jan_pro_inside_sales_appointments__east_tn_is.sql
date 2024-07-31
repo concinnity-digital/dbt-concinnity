@@ -3,7 +3,7 @@ with
     source as (
 
         select *
-        from {{ source("src_jan_pro_inside_sales_appointments", "east_tn_is") }}
+        from {{ source("src_jan_pro_inside_sales", "east_tn_is") }}
 
     ),
 
@@ -22,8 +22,9 @@ with
             proposal_ as proposal,
             closed_ as closed,
             date_closed as date_closed,
-            safe_cast(contract_rev as integer) as contract_rev,
-            commission,
+            safe_cast(contract_revenue as integer) as contract_rev,
+            appointment_commission,
+            closed_sale_commission,
             paid_ as paid,
             cast(account as string) as account,
             "JP East TN" as location

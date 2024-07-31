@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('src_jan_pro_inside_sales', 'nashville_is') }}
+    select * from {{ source('src_jan_pro_inside_sales', 'utah_is') }}
 
 ),
 
@@ -26,11 +26,12 @@ renamed as (
         closed_sale_commission,
         paid_ as paid,
         cast(null as string) as account,
-        "JP Nashville" as location
+        "JP Houston" as location
 
     from source
     where timestamp is not null
-      AND notes NOT LIKE '%test%'
+      AND notes NOT LIKE '%test%' 
+      AND notes NOT LIKE '%TEST%'
 
 )
 
