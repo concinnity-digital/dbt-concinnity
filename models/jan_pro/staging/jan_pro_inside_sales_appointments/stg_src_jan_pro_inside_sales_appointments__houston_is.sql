@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('src_jan_pro_inside_sales', 'utah_is') }}
+    select * from {{ source('src_jan_pro_inside_sales', 'houston_is') }}
 
 ),
 
