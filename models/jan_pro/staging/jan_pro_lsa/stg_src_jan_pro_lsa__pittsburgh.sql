@@ -23,7 +23,7 @@ renamed as (
         name_number,
         notes,
         intent_of_the_call,
-        dispute,
+        cast(dispute as string) as dispute,
         dispute_status,
         remarks,
         location

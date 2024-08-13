@@ -30,9 +30,8 @@ renamed as (
 
     from source
     where timestamp is not null
-      AND notes NOT LIKE '%test%' 
-      AND notes NOT LIKE '%TEST%'
-
+    or notes NOT LIKE '%test%' 
+    or notes NOT LIKE '%TEST%'
 )
 
 select * from renamed
