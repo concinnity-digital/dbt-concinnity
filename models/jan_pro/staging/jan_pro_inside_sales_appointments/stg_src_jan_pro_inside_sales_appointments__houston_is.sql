@@ -30,8 +30,8 @@ renamed as (
 
     from source
     where timestamp is not null
-      AND notes NOT LIKE '%test%' 
-      AND notes NOT LIKE '%TEST%'
+    AND notes NOT LIKE '%test%' 
+    AND notes NOT LIKE '%TEST%'
 
 )
 

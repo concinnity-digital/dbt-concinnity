@@ -31,7 +31,8 @@ with
 
         from source
         where timestamp is not null
-        OR notes NOT LIKE '%test%'
+        or notes NOT LIKE '%test%' 
+        or notes NOT LIKE '%TEST%'
 
     )
 

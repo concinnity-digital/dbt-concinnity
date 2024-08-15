@@ -9,9 +9,9 @@ source as (
 renamed as (
 
     select
-        cast(timestamp as string) as timestamp,
-        cast(date_worked as Date) as date_worked,
-        cast(proposed_date_of_appointment as date) as proposed_date_of_appointment,
+        safe_cast(timestamp as string) as timestamp,
+        safe_cast(date_worked as Date) as date_worked,
+        safe_cast(proposed_date_of_appointment as date) as proposed_date_of_appointment,
         organization,
         address,
         inside_sales_staff,
@@ -30,7 +30,8 @@ renamed as (
 
     from source
     where timestamp is not null
-      AND notes NOT LIKE '%test%'
+    or notes NOT LIKE '%test%' 
+    or notes NOT LIKE '%TEST%'
 
 )
 
