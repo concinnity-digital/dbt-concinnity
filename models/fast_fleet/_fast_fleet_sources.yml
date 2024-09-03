@@ -48,6 +48,7 @@ sources:
       - name: '2024_06'
       - name: '2024_07'
       - name: '2024_08'
+      - name: '2024_09'
 
   - name: src_fast_fleet_mapping
     schema: src_fast_fleet_mapping
