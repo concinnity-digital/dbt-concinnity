@@ -13,7 +13,7 @@ renamed as (
         email_address,
         type_of_appointment,
         cast(proposed_date_of_appointment as date) as proposed_date_of_appointment,
-        proposed_time_of_appointment,
+        PARSE_TIME('%I:%M:%S %p', proposed_time_of_appointment) AS proposed_time_of_appointment,
         company_name,
         company_address,
         contact_name,
