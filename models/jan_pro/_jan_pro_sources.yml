@@ -220,6 +220,20 @@ sources:
       - name: tulsa_is
       - name: houston_is
       - name: detroit_is
+
+  - name: src_jan_pro_inside_sales_appointments
+    schema: src_jan_pro_inside_sales_appointments
+    tables:
+      - name: appointments_east
+      - name: appointments_utah
+      - name: appointments_sacramento
+      - name: appointments_everline
+      - name: appointments_nashville
+      - name: appointments_tulsa
+      - name: appointments_houston
+      - name: appointments_detroit
+      - name: appointments_pittsburgh
+
       
       
       
