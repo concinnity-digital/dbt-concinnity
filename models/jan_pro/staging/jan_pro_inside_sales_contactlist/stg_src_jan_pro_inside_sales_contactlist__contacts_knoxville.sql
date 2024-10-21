@@ -30,9 +30,11 @@ renamed as (
         _1st_contact,
         next_contact,
         latest_contact,
-        index
+        index,
+        "JP Knoxville" as location
 
     from source
+        where business_name is not null
 
 )
 
