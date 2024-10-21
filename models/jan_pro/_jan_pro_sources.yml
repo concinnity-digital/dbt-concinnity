@@ -239,6 +239,12 @@ sources:
     tables:
       - name: contacts_knoxville
       - name: contacts_chattanooga
+      - name: contacts_utah
+      - name: contacts_sacramento
+      - name: contacts_everline
+      - name: contacts_tulsa
+      - name: contacts_houston
+      - name: contacts_detroit
   
 
       

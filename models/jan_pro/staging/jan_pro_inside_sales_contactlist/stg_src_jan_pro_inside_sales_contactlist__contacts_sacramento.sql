@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('src_jan_pro_inside_sales_contactlist', 'contacts_chattanooga') }}
+    select * from {{ source('src_jan_pro_inside_sales_contactlist', 'contacts_sacramento') }}
 
 ),
 
@@ -31,7 +31,7 @@ renamed as (
         next_contact,
         latest_contact,
         index,
-        "JP Chattanooga" as location
+        "JP Sacramento" as location
 
     from source
         where business_name is not null
