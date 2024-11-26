@@ -245,6 +245,11 @@ sources:
       - name: contacts_tulsa
       - name: contacts_houston
       - name: contacts_detroit
+
+  - name: src_jan_pro_inside_sales_scorecard
+    schema: src_jan_pro_inside_sales_scorecard
+    tables:
+      - name: daily_scorecard
   
 
       

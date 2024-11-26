@@ -18,7 +18,8 @@ renamed as (
         string_field_7 as status,
         string_field_8 as ambassador,
         string_field_9 as child_ambassador,
-        string_field_10 as datecreated,
+        --cast(string_field_10 as date) as datecreated,
+        PARSE_DATE('%m/%d/%Y', string_field_10) as datecreated,
         string_field_11 as dateupdated
 
     from source
