@@ -176,7 +176,7 @@ sources:
       - name: ads_Customer_5708690078
       - name: ads_KeywordStats_5708690078
       - name: ads_SearchQueryStats_5708690078
-      
+
   - name: src_jan_pro_georgia_aiken_googleads
     schema: src_jan_pro_georgia_aiken_googleads
     tables:
@@ -249,10 +249,4 @@ sources:
   - name: src_jan_pro_inside_sales_scorecard
     schema: src_jan_pro_inside_sales_scorecard
     tables:
-      - name: daily_scorecard
-  
-
-      
-      
-      
-    
+      - name: agents_daily_scorecard
