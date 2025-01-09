@@ -3,7 +3,7 @@ with source as (
 ),
 renamed as (
     select
-        Date,
+        safe_cast(Date as Date) as Date,
         Customer,
         Amount,
         Labor_Cost,

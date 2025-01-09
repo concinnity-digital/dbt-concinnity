@@ -12,8 +12,8 @@ renamed as (
         date,
         agent,
         metric_name,
-        target,
-        actual
+        actual,
+        notes
 
     from source
 
