@@ -206,21 +206,6 @@ sources:
       - name: nashville
       - name: utah
 
-  - name: src_jan_pro_inside_sales
-    schema: src_jan_pro_inside_sales
-    tables:
-      - name: east_tn_is
-      - name: everline_is
-      - name: nashville_is
-      - name: raleigh_is
-      - name: sacramento_is
-      - name: utah_is
-      - name: hampton_is
-      - name: georgia_aiken_is
-      - name: tulsa_is
-      - name: houston_is
-      - name: detroit_is
-
   - name: src_jan_pro_inside_sales_appointments
     schema: src_jan_pro_inside_sales_appointments
     tables:
@@ -233,6 +218,8 @@ sources:
       - name: appointments_houston
       - name: appointments_detroit
       - name: appointments_pittsburgh
+      - name: appointments_capital_district
+      - name: appointments_wisconsin
 
   - name: src_jan_pro_inside_sales_contactlist
     schema: src_jan_pro_inside_sales_contactlist
