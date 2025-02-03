@@ -18,6 +18,7 @@ renamed as (
         email,
         ambassador_source,
         child_ambassador,
+        final_source,
         dateadded,
         dateupdated
 
