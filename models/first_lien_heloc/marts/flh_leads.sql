@@ -4,7 +4,7 @@ with
         from {{ ref("stg_gohighlevel__flh_cmp_opportunities") }}
     ),
     flh_cmp_contacts as (
-        select id, dateadded, phone, email, firstname, lastname, ambassador_source
+        select id, dateadded, phone, email, firstname, lastname, ambassador_source, final_source
         from {{ ref("stg_gohighlevel__flh_cmp_contacts") }}
     ),
     leads as (
