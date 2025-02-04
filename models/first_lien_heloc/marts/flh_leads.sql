@@ -16,10 +16,15 @@ with
         from opportunities
     ),
     final as (
-        select leads.*, flh_cmp_contacts.*
+        select 
+            leads.*, 
+            flh_cmp_contacts.*,
+            count(*) over () as total_row_count
         from leads
         left join flh_cmp_contacts on leads.contact_id = flh_cmp_contacts.id
-        where leads.email_rank = 1 and flh_cmp_contacts.id is not null
+        where flh_cmp_contacts.id is not null
+        --and leads.email_rank = 1 
+
     )
 
 select * 
