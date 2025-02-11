@@ -237,3 +237,8 @@ sources:
     schema: src_jan_pro_inside_sales_scorecard
     tables:
       - name: agents_daily_scorecard
+
+  - name: src_jan_pro_inside_sales_call_logs
+    schema: src_jan_pro_inside_sales_call_logs
+    tables:
+      - name: 2025_logs
