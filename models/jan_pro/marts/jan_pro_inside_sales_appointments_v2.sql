@@ -24,6 +24,12 @@ unioned as (
     select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__appointments_capital_district') }}
     union all 
     select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__appointments_wisconsin') }}
+    union all 
+    select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__appointments_missouri') }}
+    union all 
+    select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__appointments_philadelphia') }}
+    union all 
+    select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__appointments_sarasota') }}
 
 )
 
