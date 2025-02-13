@@ -220,6 +220,9 @@ sources:
       - name: appointments_pittsburgh
       - name: appointments_capital_district
       - name: appointments_wisconsin
+      - name: appointments_missouri
+      - name: appointments_philadelphia
+      - name: appointments_sarasota
 
   - name: src_jan_pro_inside_sales_contactlist
     schema: src_jan_pro_inside_sales_contactlist

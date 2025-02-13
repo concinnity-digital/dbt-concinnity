@@ -10,7 +10,6 @@ renamed as (
 
     select
         cast(timestamp as string) as timestamp,
-        email_address,
         type_of_appointment,
         cast(proposed_date_of_appointment as date) as proposed_date_of_appointment,
         proposed_time_of_appointment,

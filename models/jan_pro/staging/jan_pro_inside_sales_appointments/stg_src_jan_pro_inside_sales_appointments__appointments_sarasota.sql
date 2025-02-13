@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('src_jan_pro_inside_sales_appointments', 'appointments_pittsburgh') }}
+    select * from {{ source('src_jan_pro_inside_sales_appointments', 'appointments_sarasota') }}
 
 ),
 
@@ -13,7 +13,7 @@ renamed as (
         type_of_appointment,
         cast(proposed_date_of_appointment as date) as proposed_date_of_appointment,
         proposed_time_of_appointment,
-        --PARSE_TIME('%I:%M:%S %p', proposed_time_of_appointment) AS proposed_time_of_appointment,
+        ---PARSE_TIME('%I:%M:%S %p', proposed_time_of_appointment) AS proposed_time_of_appointment,
         company_name,
         company_address,
         company_size,
@@ -32,7 +32,7 @@ renamed as (
         closed_sale_commission,
         paid_ as paid,
         cast(null as string) as account,
-        "JP Pittsburgh" as location
+        "JP Sarasota" as location
 
     from source
         where timestamp is not null
