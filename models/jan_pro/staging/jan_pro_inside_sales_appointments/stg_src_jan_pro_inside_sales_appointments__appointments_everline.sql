@@ -32,7 +32,7 @@ renamed as (
         closed_sale_commission,
         paid_ as paid,
         cast(null as string) as account,
-        "JP Everline" as location
+        "Everline" as location
 
     from source
         where timestamp is not null
