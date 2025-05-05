@@ -1,3 +1,4 @@
+/* 
 with source as (
     select * from {{ source("src_fast_fleet_sales","2024_01") }}
     union all
@@ -47,3 +48,5 @@ renamed as (
 )
 
 select * from renamed
+
+*/

@@ -13,8 +13,6 @@ unioned as (
     union all 
     select * from {{ ref('stg_src_jan_pro_inside_sales_contactlist__contacts_houston') }}
     union all 
-    select * from {{ ref('stg_src_jan_pro_inside_sales_contactlist__contacts_sacramento') }}
-    union all 
     select * from {{ ref('stg_src_jan_pro_inside_sales_contactlist__contacts_tulsa') }}
     union all 
     select * from {{ ref('stg_src_jan_pro_inside_sales_contactlist__contacts_utah') }}
