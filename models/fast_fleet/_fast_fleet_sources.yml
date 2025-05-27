@@ -97,3 +97,9 @@ sources:
       - name: Keyword_4201378109
       - name: Customer_4201378109
       - name: KeywordStats_4201378109
+
+  - name: src_fast_fleet_call_logs
+    schema: src_fast_fleet_call_logs
+    tables:
+      - name: yr_2024
+      - name: yr_2025
