@@ -1,5 +1,7 @@
 with source as (
     select * from {{ source("src_fast_fleet_call_logs","yr_2024") }}
+    union all
+    select * from {{ source("src_fast_fleet_call_logs","yr_2025") }}
 ),
 renamed as (
     select
