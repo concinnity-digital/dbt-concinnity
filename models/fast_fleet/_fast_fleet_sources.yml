@@ -59,6 +59,7 @@ sources:
       - name: '2025_05'
       - name: '2025_06'
       - name: '2025_07'
+      - name: '2025_08'
 
   - name: src_fast_fleet_mapping
     schema: src_fast_fleet_mapping
