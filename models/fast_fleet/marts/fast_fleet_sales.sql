@@ -821,6 +821,7 @@ with
         
         
         
+        
 
     ),
     add_row_num as (select *, row_number() over () as sales_rn from unioned),
