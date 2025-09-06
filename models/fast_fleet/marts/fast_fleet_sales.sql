@@ -799,6 +799,24 @@ with
             lead_source,
             notes,
             shift
+        from {{ ref("stg_fast_fleet_sales__2025_08") }}
+        union all
+        select
+            date,
+            customer,
+            amount,
+            labor_cost,
+            job_supplies,
+            gross_revenue,
+            gp_margin,
+            service_type,
+            classification,
+            job,
+            payment_method,
+            truck,
+            lead_source,
+            notes,
+            shift
         from {{ ref("stg_fast_fleet_sales__2025_09") }}
         
         
