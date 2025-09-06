@@ -799,7 +799,7 @@ with
             lead_source,
             notes,
             shift
-        from {{ ref("stg_fast_fleet_sales__2025_08") }}
+        from {{ ref("stg_fast_fleet_sales__2025_09") }}
         
         
         
