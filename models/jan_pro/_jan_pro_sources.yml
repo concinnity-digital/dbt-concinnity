@@ -224,6 +224,7 @@ sources:
       - name: appointments_philadelphia
       - name: appointments_sarasota
       - name: appointments_san_antonio
+      - name: appointments_hampton_roads
 
   - name: src_jan_pro_inside_sales_contactlist
     schema: src_jan_pro_inside_sales_contactlist
