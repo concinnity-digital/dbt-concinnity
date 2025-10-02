@@ -32,7 +32,9 @@ unioned as (
     select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__appointments_sarasota') }}
     union all 
     select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__appointments_san_antonio') }}
-
+    union all
+    select * from {{ ref('stg_src_jan_pro_inside_sales_appointments__appointments_hampton_roads') }}
+    
 )
 
 select * from unioned
