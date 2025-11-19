@@ -19,7 +19,7 @@ renamed as (
         ambassador_source,
         child_ambassador,
         final_source,
-        dateadded,
+        date(dateadded) as dateadded,
         dateupdated
 
     from source
